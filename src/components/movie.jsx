@@ -13,9 +13,9 @@ const Movie = (props) => {
       ></img>
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
-        <p className="card-text">{overview}</p>
+        <p className="card-text">{overview.slice(0, 100) + "..."}</p>
         <a href="#" className="btn btn-primary align-self-end">
-          Go somewhere
+          View full Details
         </a>
       </div>
     </div>
