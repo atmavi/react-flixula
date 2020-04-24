@@ -1,13 +1,19 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 class Carousel extends Component {
   componentDidMount() {
     axios.get(this.state.url).then((res) => {
-      this.setState({ movies: res.data.results });
+      console.log(res.data);
+      this.setState({ movies: res.data.results.slice(0, 5) });
     });
   }
 
-  state = {};
+  state = {
+    url:
+      "https://api.themoviedb.org/3/movie/now_playing?api_key=41fae3359cdfc7dc7c70fd9b79294aa9&language=en-US&page=1",
+    movies: [],
+  };
   render() {
     return (
       <div
