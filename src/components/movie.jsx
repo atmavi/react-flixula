@@ -11,10 +11,10 @@ const Movie = (props) => {
         src={imgBaseUrl + poster_path}
         alt="Card image cap"
       ></img>
-      <div className="card-body">
+      <div className="card-body d-flex flex-column justify-content-between">
         <h5 className="card-title">{title}</h5>
         <p className="card-text">{overview.slice(0, 100) + "..."}</p>
-        <a href="#" className="btn btn-primary align-self-end">
+        <a href="#" className="btn btn-primary align-self-center">
           View full Details
         </a>
       </div>
