@@ -4,7 +4,6 @@ import axios from "axios";
 class Carousel extends Component {
   componentDidMount() {
     axios.get(this.state.url).then((res) => {
-      console.log(res.data);
       this.setState({ movies: res.data.results.slice(0, 5) });
     });
   }
@@ -13,8 +12,10 @@ class Carousel extends Component {
     url:
       "https://api.themoviedb.org/3/movie/now_playing?api_key=41fae3359cdfc7dc7c70fd9b79294aa9&language=en-US&page=1",
     movies: [],
+    posterbaseUrl: "https://image.tmdb.org/t/p/w500",
   };
   render() {
+    const { movies, posterbaseUrl } = this.state;
     return (
       <div
         id="carouselExampleIndicators"
@@ -22,16 +23,32 @@ class Carousel extends Component {
         data-ride="carousel"
       >
         <ol className="carousel-indicators">
-          <li
-            data-target="#carouselExampleIndicators"
-            data-slide-to="0"
-            className="active"
-          ></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          {movies.map((movie, i) => {
+            return (
+              <li
+                key={movie.id}
+                data-target="#carouselExampleIndicators"
+                data-slide-to="0"
+                className={i === 0 ? "active" : ""}
+              ></li>
+            );
+          })}
         </ol>
         <div className="carousel-inner">
-          <div className="carousel-item active">
+          {movies.map((movie, i) => {
+            console.log(movie);
+            return (
+              <div className="carousel-item active" key={movie.id}>
+                <img
+                  className="d-block w-100"
+                  src={posterbaseUrl + movie.poster_path}
+                  alt="First slide"
+                ></img>
+              </div>
+            );
+          })}
+
+          {/* <div className="carousel-item active">
             <img className="d-block w-100" src="..." alt="First slide"></img>
           </div>
           <div className="carousel-item">
@@ -39,7 +56,7 @@ class Carousel extends Component {
           </div>
           <div className="carousel-item">
             <img className="d-block w-100" src="..." alt="Third slide"></img>
-          </div>
+          </div> */}
         </div>
         <a
           className="carousel-control-prev"
