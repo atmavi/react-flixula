@@ -13,8 +13,8 @@ const Movie = (props) => {
       <div className="card-body d-flex flex-column justify-content-between">
         <h5 className="card-title">{title}</h5>
         <p className="card-text">{overview.slice(0, 100) + "..."}</p>
-        <a href="#" className="btn btn-primary align-self-center">
-          View full Details
+        <a href="/test" className="btn btn-primary align-self-center">
+          View full Detailss
         </a>
       </div>
     </div>

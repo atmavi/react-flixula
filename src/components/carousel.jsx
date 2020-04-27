@@ -19,7 +19,7 @@ class Carousel extends Component {
     return (
       <div
         id="carouselExampleIndicators"
-        className="carousel slide"
+        className="carousel slide w-25 h-25"
         data-ride="carousel"
       >
         <ol className="carousel-indicators">
@@ -47,16 +47,6 @@ class Carousel extends Component {
               </div>
             );
           })}
-
-          {/* <div className="carousel-item active">
-            <img className="d-block w-100" src="..." alt="First slide"></img>
-          </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src="..." alt="Second slide"></img>
-          </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src="..." alt="Third slide"></img>
-          </div> */}
         </div>
         <a
           className="carousel-control-prev"
