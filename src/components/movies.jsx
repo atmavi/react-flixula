@@ -19,7 +19,7 @@ class Movies extends Component {
   render() {
     const { movies } = this.state;
     return (
-      <div className="d-flex flex-wrap">
+      <div className="d-flex flex-wrap container">
         {movies.map((movie) => {
           return <Movie key={movie.id} movie={movie} />;
         })}

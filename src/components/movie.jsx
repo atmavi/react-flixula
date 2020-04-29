@@ -4,7 +4,7 @@ const Movie = (props) => {
   const { poster_path, title, overview } = props.movie;
   const imgBaseUrl = "https://image.tmdb.org/t/p/w500";
   return (
-    <div className="card w-25">
+    <div className="card">
       <img
         className="card-img-top"
         src={imgBaseUrl + poster_path}
@@ -14,7 +14,7 @@ const Movie = (props) => {
         <h5 className="card-title">{title}</h5>
         <p className="card-text">{overview.slice(0, 100) + "..."}</p>
         <a href="/test" className="btn btn-primary align-self-center">
-          View full Detailss
+          View full Details
         </a>
       </div>
     </div>
