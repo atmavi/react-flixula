@@ -1,0 +1,7 @@
+.container {
+  background-color: violet;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15.6rem, 1fr));
+  gap: 1rem 0.5rem;
+}
