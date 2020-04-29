@@ -24,7 +24,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        <Header movie={movies.slice(0, 5)} />
+        <Header movies={movies.slice(0, 5)} />
         <Movies />
       </div>
     );
