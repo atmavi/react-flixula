@@ -14,3 +14,26 @@
 
 .featured {
   width: 20vw; }
+
+.gallery {
+  height: 90vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr); }
+  .gallery .row-full {
+    grid-row: 1 / -1;
+    grid-column: 1 / span 1; }
+  .gallery .row-half {
+    grid-column: 2/ 3; }
+    .gallery .row-half--1 {
+      grid-row: 1/4; }
+    .gallery .row-half--2 {
+      grid-row: 4/-1; }
+  .gallery .row-third {
+    grid-column: 3/4; }
+    .gallery .row-third--1 {
+      grid-row: 1 / span 2; }
+    .gallery .row-third--2 {
+      grid-row: 3 / span 2; }
+    .gallery .row-third--3 {
+      grid-row: 5 / span 2; }

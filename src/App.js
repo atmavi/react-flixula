@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Navbar from "./components/nav";
 import Movies from "./components/movies";
 import Header from "./components/header";
+import Gallery from "./components/gallery";
 import "./App.css";
 
 import axios from "axios";
@@ -25,6 +26,7 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <Header movies={movies.slice(0, 5)} />
+        <Gallery movies={movies.slice(0, 6)} />
         <Movies />
       </div>
     );

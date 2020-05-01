@@ -11,18 +11,14 @@ class Header extends Component {
 
   render() {
     //  const { movies } = this.props;
-    let { displayed, movies } = this.state;
+    let { displayed } = this.state;
+    let { movies } = this.props;
+    // let url = "https://image.tmdb.org/t/p/w500/" + movies[displayed];
+
     return (
       <header className="header">
         <div className="banner">
-          <img
-            src={
-              console.log(movies)
-              // "https://image.tmdb.org/t/p/w500/" + movies[displayed]
-            }
-            alt=""
-            className="banner__img"
-          />
+          <img src={movies[displayed]} alt="" className="banner__img" />
         </div>
         <div className="featured"></div>
       </header>
@@ -39,7 +35,7 @@ class Header extends Component {
   };
 
   getMovieDetails = () => {
-    console.log(this.state.movies);
+    // console.log(this.state.movies);
   };
 }
 
